@@ -1,6 +1,6 @@
 <ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
 
-<h2>Geo Location</h2>
+<h2>Geo Location getCurrentPosition</h2>
 
 <h3>Syntax</h3>
 <p class="syntax">navigator.geolocation.getCurrentPosition(<span class="arg req">win</span>, <span class="arg req">fail</span>);</p>
@@ -21,3 +21,36 @@
   
   navigator.geolocation.getCurrentPosition(win, fail);
 }</pre>
+
+<hr />
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
+
+<h2>GeoLocation watchPosition</h2>
+
+<h3>Syntax</h3>
+<p class="syntax">navigator.geolocation.watchPosition(<span class="arg_req">win</span>, <span class="arg_req">fail</span>, options)</p>
+
+<h3>Arguments</h3>
+<p class="argument">win<span class="type">Function</span></p>
+<p class="argument">fail<span class="type">Function</span></p>
+<p calss="argument">options<span class="type">Hash</span></p>
+
+<h3 class="code">Example</h3>
+<pre>
+  var watch_id = navigator.geolocation.watchPosition(win, fail);
+</pre>
+
+<hr />
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
+<h2>GeoLocation clearWatch</h2>
+
+<h3>Syntax</h3>
+<p class="syntax">navigator.geolocation.clearWatch(<span class="arg_req">watchId</span>)</p>
+
+<h3>Arguments</h3>
+<p class="argument">watchId<span class="type">integer</span></p>
+
+<h3 class="code">Example</h3>
+<pre>
+  navigator.geolocation.clearWatch(watchId);
+</pre>
