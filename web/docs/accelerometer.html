@@ -1,5 +1,31 @@
-<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li></ul>
-<h2>Accelerometer</h2>
+
+<ul class="devices"><li class="symbian">symbian</li></ul>
+
+<h2>getCurrentAcceleration</h2>
+
+<h3>Syntax</h3>
+<p class="syntax">navigator.accelerometer.getCurrentAcceleration(<span class="arg req">win</span>, <span class="arg req">fail</span>);</p>
+
+<h3>Arguments</h3>
+<p class="argument">win<span class="type">Function</span></p>
+<p class="argument">fail<span class="type">Function</span></p>
+
+<h3 class="code">Example</h3>
+<pre>function getAccel() {
+  var win = function(a){
+    document.getElementById('x').innerHTML = a.x;
+    document.getElementById('y').innerHTML = a.y;
+    document.getElementById('z').innerHTML = a.z;
+  };
+  var fail = function(){};
+
+  navigator.accelerometer.getCurrentAcceleration(win, fail);
+}</pre>
+
+<hr />
+
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="symbian">symbian</li></ul>
+<h2>watchAcceleration</h2>
 
 <h3>Syntax</h3>
 <p class="syntax">navigator.accelerometer.watchAcceleration(<span class="arg req">win</span>, <span class="arg req">fail</span><span class="arg opt">, opts</span>);</p>
@@ -19,5 +45,20 @@
   var fail = function(){};
   var opt = {};
   opt.frequency = 100;
-  timer = navigator.accelerometer.watchAcceleration(win, fail, opt);
+  watchId = navigator.accelerometer.watchAcceleration(win, fail, opt);
 }</pre>
+
+<hr />
+
+<ul class="devices"><li class="symbian">symbian</li></ul>
+
+<h2>clearWatch</h2>
+
+<h3>Syntax</h3>
+<p class="syntax">navigator.acelerometer.clearWatch(<span class="arg req">watchId</span>);</p>
+
+<h3>Arguments</h3>
+<p class="argument">watchId<span class="type">number</span></p>
+
+<h3 class="code">Example</h3>
+<pre>navigator.accelerometer.clearWatch(watchId)</pre>

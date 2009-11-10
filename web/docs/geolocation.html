@@ -1,6 +1,6 @@
-<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li><li class="symbian">symbian</li></ul>
 
-<h2>Geo Location</h2>
+<h2>getCurrentPosition</h2>
 
 <h3>Syntax</h3>
 <p class="syntax">navigator.geolocation.getCurrentPosition(<span class="arg req">win</span>, <span class="arg req">fail</span>);</p>
@@ -21,3 +21,50 @@
   
   navigator.geolocation.getCurrentPosition(win, fail);
 }</pre>
+
+<hr />
+
+<ul class="devices"><li class="symbian">symbian</li></ul>
+
+<h2>watchPosition</h2>
+
+<h3>Syntax</h3>
+<p class="syntax">navigator.geolocation.watchPosition(<span class="arg req">win</span>, <span class="arg req">fail</span>, <span class="arg opt">opts</span>);</p>
+
+<h3>Arguments</h3>
+<p class="argument">win<span class="type">Function</span></p>
+<p class="argument">fail<span class="type">Function</span></p>
+<p class="argument">opts <span class="optional">(Optional)</span><span class="type">Object</span></p>
+
+<h3>Return Value</h3>
+<p class="argument">watchId<span class="type">number</span></p>
+
+<h3 class="code">Example</h3>
+<pre>var watch = function() {
+  
+  var win = function(p){
+    alert(p.coords.latitude + " " + p.coords.longitude);
+  };
+  var fail = function(){
+    //default query
+  };
+  var options = {};
+  options.frequency = 3000;
+  
+  watchId = navigator.geolocation.watchPosition(win, fail, options);
+}</pre>
+
+<hr />
+
+<ul class="devices"><li class="symbian">symbian</li></ul>
+
+<h2>clearWatch</h2>
+
+<h3>Syntax</h3>
+<p class="syntax">navigator.geolocation.clearWatch(<span class="arg req">watchId</span>);</p>
+
+<h3>Arguments</h3>
+<p class="argument">watchId<span class="type">number</span></p>
+
+<h3 class="code">Example</h3>
+<pre>navigator.geolocation.clearWatch(watchId)</pre>
