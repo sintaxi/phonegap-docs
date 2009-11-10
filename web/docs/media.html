@@ -1,12 +1,36 @@
 <ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
 
+<h2>Media</h2>
+
+<h3>Syntax</h3>
+<p class="syntax">Media.new(<span class="arg req">src</span>, win, fail);</a>
+</p>
+
+<h3>Arguments</h3>
+<p class="argument">src<span class="type">File</span></p>
+<p class="argument">win<span class="type">Function</span></p>
+<p class="argument">fail<span class="type">Function</span></p>
+
+<h3> Example </h3>
+<pre>var media = Media.new("hammer_time.wav", win, fail);</pre>
+
+<hr />
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
 <h2>Play</h2>
 
 <h3>Syntax</h3>
-<p class="syntax">navigator.media.playSound(<span class="arg req">file</span>);</p>
+<p class="syntax">media.play();</p>
 
 <h3>Arguments</h3>
-<p class="argument">file<span class="type">File</span></p>
 
 <h3>Example</h3>
-<pre>navigator.media.playSound("hammer_time.wav");</pre>
+<pre>media.play();</pre>
+
+<hr />
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
+<h2>Stop</h2>
+<p class="syntax">media.stop();</p>
+<h3>Arguments</h3>
+
+<h3>Example</h3>
+<pre>media.stop();</pre>
