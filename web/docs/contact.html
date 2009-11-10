@@ -1,8 +1,67 @@
-<ul class="devices"><li class="iphone">iphone</li></ul>
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
+<h2>AddressBook</h2>
+
+<h3>Syntax</h3>
+<p class="syntax">navigator.AddressBook.findContacts(filter, win, fail)</p>
+
+<h3>Example</h3>
+<pre>
+navigator.AddressBook.findContacts({givenName: "Joe"}, win, fail);
+
+function win(contacts)
+{
+   // Do something with contacts collection returned from the query
+}
+
+function fail()
+{
+  alert('nothing here');
+}
+</pre>
+
+<hr />
+
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
+
 <h2>Contact</h2>
 
-<h3 class="code">Code</h3>
-<pre></pre>
+<p>The Contact object is what is returned by the findContacts call.  This 
+contains the following data.  This object is a subset of the W3C Device API draft, and only the following is currently implemented at this time.
+</p>
 
-<h3 class="code">Example</h3>
-<pre></pre>
+<h3>Code</h3>
+<pre>
+var Contact = function() {
+  this.givenNames = [];
+  this.familyName = "";
+  this.phones = [];
+  this.email = [];
+}
+</pre>
+
+<hr />
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
+
+<h2>PhoneNumber</h2>
+
+<h3>Code</h3>
+<pre>
+  var PhoneNumber = function() {
+  this.number = "";
+  this.type = "";
+}
+</pre>
+
+<hr />
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
+
+<h2>Email</h2>
+
+<h3>Code</h3>
+<pre>
+var Email = function() {
+  this.address = "";
+  this.type = "";
+}
+</pre>
+
