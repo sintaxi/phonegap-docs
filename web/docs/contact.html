@@ -1,67 +1,46 @@
-<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
-<h2>AddressBook</h2>
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li><li class="symbian">symbian</li></ul>
+<h2>ContactManager.getAllContacts</h2>
 
 <h3>Syntax</h3>
-<p class="syntax">navigator.AddressBook.findContacts(filter, win, fail)</p>
+<p class="syntax">navigator.ContactManager.getAllContacts(<span class="arg req">win</span>, <span class="arg req">fail</span>,<span class="arg"> options</span>)</p>
 
-<h3>Example</h3>
+<h3>Arguments</h3>
+<p class="argument">win<span class="type">Function</span></p>
+<p class="argument">fail<span class="type">Function</span></p>
+<p class="options">options<span class="type">Object</span></p>
+
+<h3 class="code">Example</h3>
 <pre>
-navigator.AddressBook.findContacts({givenName: "Joe"}, win, fail);
+navigator.ContactManager.getAllContacts(countContacts, fail);
 
-function win(contacts)
+var countContacts(contacts)
 {
-   // Do something with contacts collection returned from the query
-}
-
-function fail()
-{
-  alert('nothing here');
+  alert(contacts.length);
 }
 </pre>
 
 <hr />
 
-<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
-
-<h2>Contact</h2>
-
-<p>The Contact object is what is returned by the findContacts call.  This 
-contains the following data.  This object is a subset of the W3C Device API draft, and only the following is currently implemented at this time.
-</p>
+<h2>Contact Object</h2>
 
 <h3>Code</h3>
 <pre>
 var Contact = function() {
-  this.givenNames = [];
-  this.familyName = "";
-  this.phones = [];
-  this.email = [];
+  this.name = ""
+  this.phones = {};
+  this.email = {};
 }
 </pre>
 
 <hr />
-<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
-
-<h2>PhoneNumber</h2>
-
-<h3>Code</h3>
-<pre>
-  var PhoneNumber = function() {
-  this.number = "";
-  this.type = "";
-}
-</pre>
-
-<hr />
-<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li></ul>
-
-<h2>Email</h2>
+<ul class="devices"><li class="iphone">iphone</li><li class="android">android</li><li class="blackberry">blackberry</li><li class="symbian">symbian</li></ul>
+<h3>Contacts</h3>
 
 <h3>Code</h3>
 <pre>
-var Email = function() {
-  this.address = "";
-  this.type = "";
+var Contact = function() {
+  this.name = ""
+  this.phones = {};
+  this.email = {};
 }
 </pre>
-
